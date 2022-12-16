@@ -58,7 +58,7 @@ int main() {
 
   scanf("%*s [ %[^]] ]", handtemp);
 
-  carta = strtok(handtemp, " ");
+  carta = strtok(handtemp, " ");  // separar as cartas
   while (carta != NULL) {
     insertInHand(carta);
     carta = strtok(NULL, " ");
@@ -72,7 +72,7 @@ int main() {
   }
   strcpy(mesa.naipe, &tabletemp[posNaipe]);
   tabletemp[posNaipe] = 0;
-  strcpy(mesa.num, tabletemp); 
+  strcpy(mesa.num, tabletemp); //copia tanto o numero da carta quanto o naipe da carta para tabletemp
 
   char turnId[10], acao[15], comp1[5], comp2[5], discard[8] = "DISCARD", buy[4]="BUY";
 
@@ -127,19 +127,20 @@ int main() {
       int jaJoguei = 0;
       for (int k = 0; k < numCard; k++) {
         if (hand[k].ativa == 1) {
-            if (strcmp(hand[k].naipe, mesa.naipe) == 0) {
-              
-              if (hand[k].num[0] == 'C' || hand[k].num[0] == 'A'){
+            if (strcmp(hand[k].naipe, mesa.naipe) == 0) { //se for diferente apenas o naipe
+              // se a carta que eu tenho em mãos for diferente do naipe 
+              if (hand[k].num[0] == 'C' || hand[k].num[0] == 'A'){ 
+                // eu jogo carta para mudar esse naipe (ou coringa ou Ás)
                 printf("DISCARD %s%s ♦\n", hand[k].num, hand[k].naipe);
                 jaJoguei = 1;
                 hand[k].ativa = 0;
-                strcpy(mesa.num, hand[k].num);
+                strcpy(mesa.num, hand[k].num); 
                 strcpy(mesa.naipe, hand[k].naipe);
                 break;
               }
               
               else {
-		        printf("DISCARD %s%s\n", hand[k].num, hand[k].naipe);
+		            printf("DISCARD %s%s\n", hand[k].num, hand[k].naipe);
                 jaJoguei = 1;
                 hand[k].ativa = 0;
                 strcpy(mesa.num, hand[k].num);
@@ -147,10 +148,10 @@ int main() {
                 break;
               }
             } 
-            else if (strcmp(hand[k].num, mesa.num) == 0) {
+            else if (strcmp(hand[k].num, mesa.num) == 0) {  //se for diferente agora o numero
 
               if (hand[k].num[0] == 'A' || hand[k].num[0] == 'C') {
-		        printf("DISCARD %s%s ♦\n", hand[k].num, hand[k].naipe);
+		            printf("DISCARD %s%s ♦\n", hand[k].num, hand[k].naipe);
                 jaJoguei = 1;
                 hand[k].ativa = 0;
                 strcpy(mesa.num, hand[k].num);
