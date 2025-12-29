@@ -1,20 +1,12 @@
-<h1 align="center">Introdução às técnicas de programação - UNO</h1>
+<h1 align="center">Uno made with C</h1>
 
 - [João Eduardo Braga Menezes da Costa Cruz](https://github.com/joapedu)
-  - *Matrícula 20220035851*
   
   
 - [Luis Eduardo da Silva Ribeiro](https://github.com/edurs2602)
-  - *Matrícula 20220028973*
-
-## 💻 Sobre ##
-    Projeto prático apresentado à disciplina de Introdução às Técnicas de Programação que consiste na criação
-    de um bot na liguagem de programação C que jogue UNO a partir de um baralho clássico. 
-
----
 
 ## 🔧 Estrutura do Código ##
-- Apenas [um arquivo](https://github.com/joapedu/itp-uno/blob/main/main.c) foi necessário para confecção do bot.
+- Apenas [um arquivo](https://github.com/joapedu/itp-uno/blob/main/main.c) concentra a lógica principal das decisões.
 
 - O código encontra-se todo comentado explicando cada decisão tomada pelos componentes do grupo para realização da lógica por trás do bot.
 
